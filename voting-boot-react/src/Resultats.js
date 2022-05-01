@@ -1,3 +1,5 @@
+//Marc-André Dussault Gr 427
+
 import {Box, TableContainer, Table, Tbody, Tr, Td, Th, Thead} from "@chakra-ui/react";
 
 function Resultats({_candidates, _setCandidates}) {

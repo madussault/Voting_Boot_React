@@ -1,5 +1,6 @@
-import {Button, Box, TableContainer, Table, Tbody, Tr, Td} from "@chakra-ui/react";
+//Marc-André Dussault Gr 427
 
+import {Button, Box, TableContainer, Table, Tbody, Tr, Td} from "@chakra-ui/react";
 
 function vote({_candidates, _setCandidates, _setComponentToRender}) {
 
