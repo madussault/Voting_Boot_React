@@ -3,7 +3,7 @@
 import {Input, Button, Box, Tr, Td, TableContainer, Table, Tbody} from '@chakra-ui/react'
 import { v4 as uuid } from 'uuid';
 
-function AjouterCandidat({_candidates, _setCandidates, _setComponentToRender}){
+function AjouterCandidat({candidates, setCandidates, setComponentToRender}){
 
     //Ajoute les candidats un à un dans la liste à partir de l'input
     const handleOnSubmitEvent = (e) => {
@@ -12,12 +12,12 @@ function AjouterCandidat({_candidates, _setCandidates, _setComponentToRender}){
             name: e.target.elements.namedItem('candidateName').value,
             voteCount: 0
         }
-        _setCandidates([..._candidates, candidate]);
+        setCandidates([...candidates, candidate]);
         e.target.reset();
     }
 
     // Conçoit la table avec le nom des candidats tirés de la liste
-    const candidatesListing = _candidates.map(candidate=>
+    const candidatesListing = candidates.map(candidate=>
         <Tr key={candidate.id}>
             <Td textAlign="center">{candidate.name}</Td>
         </Tr>
@@ -30,7 +30,7 @@ function AjouterCandidat({_candidates, _setCandidates, _setComponentToRender}){
                 <Button type="submit" colorScheme='blue'>Add Candidate</Button>
             </form>
 
-            <Button type="submit" colorScheme='green' mt="10" onClick={() => _setComponentToRender("renderVote")}>Start Vote!</Button>
+            <Button type="submit" colorScheme='green' mt="10" onClick={() => setComponentToRender("renderVote")}>Start Vote!</Button>
 
             <Box borderRadius='md' maxW="400px" bg='white' color='black' mt="20">
                 <TableContainer>

@@ -2,17 +2,17 @@
 
 import {Box, TableContainer, Table, Tbody, Tr, Td, Th, Thead} from "@chakra-ui/react";
 
-function Resultats({_candidates, _setCandidates}) {
+function Resultats({candidates}) {
 
     // Détermine le candidat gagnant
     function getMostVoted(){
-        const voteCounts = _candidates.map(candidate => candidate.voteCount);
+        const voteCounts = candidates.map(candidate => candidate.voteCount);
         const highestVoteCount = Math.max(...voteCounts);
-        return _candidates.filter(candidate => candidate.voteCount === highestVoteCount)[0];
+        return candidates.filter(candidate => candidate.voteCount === highestVoteCount)[0];
     }
 
     // Ajoute les candidats dans la table à partir de la liste
-    const candidatesListing = _candidates.map(candidate=>
+    const candidatesListing = candidates.map(candidate=>
         <Tr key={candidate.id}>
             <Td textAlign="center">{candidate.name}</Td>
             <Td textAlign="center">{candidate.voteCount}</Td>
